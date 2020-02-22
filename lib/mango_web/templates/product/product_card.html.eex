@@ -1,0 +1,20 @@
+<div class="card">
+  <div class="view overlay">
+    <img class="card-img-top" src="<%= @product.image %>"
+      alt="Card image cap">
+    <a href="#!">
+      <div class="mask rgba-white-slight"></div>
+    </a>
+  </div>
+  <div class="card-body">
+    <hr>
+    <div class="d-flex justify-content-between living-coral-text">
+     <h4 class="card-title mt-3"><%= @product.name %></h4>
+     <div>
+       <p><%= @product.pack_size %></p>
+       <p class="mb-0 h5">₹  <%= @product.price %></p>
+     </div>
+   </div>
+  </div>
+</div>
+<br>

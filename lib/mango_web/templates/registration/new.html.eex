@@ -1,0 +1,42 @@
+<div class="card">
+    <div class="card-body mx-4">
+      <div class="text-center">
+        <h3 class="dark-grey-text mb-5"><strong>Create an account</strong></h3>
+      </div>
+      <%= form_for @changeset, Routes.registration_path(@conn, :create), [as: :registration, id: "registration-form"], fn f -> %>
+      <%= if @changeset.action do %>
+        <div id="form-error" class="alert alert-danger">
+        <p>Oops, something went wrong! Please check the errors below.</p>
+        </div>
+      <% end %>
+      <div class="md-form">
+        <%= text_input f, :name, placeholder: "Your Name", class: "form-control" %>
+        <%= error_tag f, :name %>
+      </div>
+
+      <div class="md-form">
+        <%= text_input f, :email, placeholder: "Your Email", class: "form-control" %>
+        <%= error_tag f, :email %>
+      </div>
+
+      <div class="md-form">
+        <%= password_input f, :password, placeholder: "Password", class: "form-control" %>
+        <%= error_tag f, :password %>
+      </div>
+
+      <div class="md-form">
+        <%= text_input f, :phone, class: "form-control", placeholder: "Your Phone Number" %>
+        <%= error_tag f, :phone %>
+      </div>
+
+      <div class="md-form">
+        <%= select f, :residence_area, @residence_areas,prompt: "Choose your residence area", class: "form-control" %>
+        <%= error_tag f, :residence_area %>
+      </div>
+
+      <div class="text-center mb-3 mt-3">
+        <%= submit "Register", class: "btn blue-gradient btn-block btn-rounded z-depth-1a" %>
+      </div>
+      <% end %>
+    </div>
+  </div

@@ -1,0 +1,8 @@
+<h3 style="color: #ec5d57" class="font-weight-bold text-center pb-3">Seasonal Specials</h3>
+<div class="row">
+  <%= for product <- @seasonal_products do %>
+    <div class="col-md-4">
+      <%= render MangoWeb.ProductView, "product_card.html", product: product %>
+    </div>
+  <% end %>
+</div>

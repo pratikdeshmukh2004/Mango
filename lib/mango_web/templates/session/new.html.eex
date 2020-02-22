@@ -1,0 +1,20 @@
+<div class="card">
+    <div class="card-body mx-4">
+      <div class="text-center">
+        <h3 class="dark-grey-text mb-5"><strong>Mango Customer Login</strong></h3>
+      </div>
+    <%= form_for @conn, Routes.session_path(@conn, :create), [as: :session, id: "session-form"], fn f -> %>
+    <div class="md-form">
+      <%= text_input f, :email, placeholder: "Your Email", class: "form-control" %>
+      <%= error_tag f, :email %>
+    </div>
+    <div class="md-form">
+      <%= password_input f, :password, placeholder: "Password", class: "form-control" %>
+      <%= error_tag f, :password %>
+    </div>
+    <div class="text-center mb-3 mt-3">
+      <%= submit "Register", class: "btn blue-gradient btn-block btn-rounded z-depth-1a" %>
+    </div>
+    <% end %>
+  </div>
+</div>
